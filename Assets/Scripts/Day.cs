@@ -8,23 +8,46 @@ using TMPro;
 public class Day : MonoBehaviour
 {
     [SerializeField] DayOfWeek _week = default;
-    [SerializeField] TMP_Text _day = default;
+    public DayOfWeek Week 
+    {
+        get => _week;
+        set 
+        { 
+            _week = value;
+            OnColorChanged();
+        }
+    }
+    [SerializeField] TMP_Text _dayText = default;
     [SerializeField] Image _image = default;
     [SerializeField] List<string> _plan = new List<string>();
+    int _day = 0;
+    public int _Day
+    {
+        get => _day;
+        set
+        {
+            _day = value;
+            OnValueChanged();
+        }
+    }
+
+    private void OnValueChanged()
+    {
+        _dayText.text = _day.ToString();
+    }
 
     private void OnValidate()
     {
-        OnCellColorChanged();
+        OnColorChanged();
     }
 
-    private void OnCellColorChanged()
+    private void OnColorChanged()
     {
         if(_image != null)
         {
             if (_week == DayOfWeek.Sunday)
             {
                 _image.color = Color.red;
-                Debug.Log(_week);
             }
             else if (_week == DayOfWeek.Saturday)
             {
