@@ -43,7 +43,6 @@ public class Month : MonoBehaviour
     private void CreateCalendar()
     {
         int day = 1;
-        Debug.Log(DateTime.DaysInMonth(_year,_month));
         for (int i = 0; i < _cellCount; i++)
         {
             if (i >= _firstWeek && i < DateTime.DaysInMonth(_year, _month) + _firstWeek)
@@ -52,7 +51,7 @@ public class Month : MonoBehaviour
                 var d = Instantiate(_day, transform);
                 d.name = $"Day_{i}";
                 _days[i] = d;
-                _days[i]._Day = day;
+                _days[i].Date = day;
                 _days[i].Week = _week;
                 day++;
             }

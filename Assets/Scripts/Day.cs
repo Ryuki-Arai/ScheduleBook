@@ -23,13 +23,13 @@ public class Day : MonoBehaviour
     [SerializeField] Image _image = default;
     [SerializeField] List<string> _events = new List<string>();
     public List<string> Events => _events;
-    int _day = 0;
-    public int _Day
+    int _date = 0;
+    public int Date
     {
-        get => _day;
+        get => _date;
         set
         {
-            _day = value;
+            _date = value;
             OnValueChanged();
         }
     }
@@ -39,7 +39,7 @@ public class Day : MonoBehaviour
     /// </summary>
     private void OnValueChanged()
     {
-        _dayText.text = _day.ToString();
+        _dayText.text = _date.ToString();
     }
 
     private void OnValidate()
