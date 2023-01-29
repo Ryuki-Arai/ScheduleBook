@@ -19,7 +19,7 @@ public class Day : MonoBehaviour
     }
     [SerializeField] TMP_Text _dayText = default;
     [SerializeField] Image _image = default;
-    [SerializeField] List<string> _plan = new List<string>();
+    [SerializeField] List<string> _event = new List<string>();
     int _day = 0;
     public int _Day
     {
