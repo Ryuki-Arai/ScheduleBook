@@ -1,3 +1,7 @@
+/// <summary>
+/// 曜日情報
+/// 7種の他、祝日とNone(カレンダー上の空白)に用いるパラメータが存在
+/// </summary>
 public enum Week
 {
     None = -1,
