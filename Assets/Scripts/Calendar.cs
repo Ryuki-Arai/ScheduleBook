@@ -13,13 +13,13 @@ public class Calendar : MonoBehaviour
 
     void Start()
     {
-        _yearText.text = $"{_yearData}";
-        _monthText.text = $"{_monthData}";
-        _month.InitMonthData(_yearData,_monthData);
+        ApplyCalendar();
     }
 
-    void Update()
+    public void ApplyCalendar()
     {
-        
+        _yearText.text = $"{_yearData}";
+        _monthText.text = $"{_monthData}";
+        _month.InitMonthData(_yearData, _monthData);
     }
 }
