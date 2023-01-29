@@ -346,6 +346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 352571148}
+  - component: {fileID: 352571151}
   - component: {fileID: 352571150}
   - component: {fileID: 352571149}
   m_Layer: 5
@@ -417,6 +418,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352571147}
   m_CullTransparentMesh: 1
+--- !u!114 &352571151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352571147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8361af11a90bf5741ac58769b8c855a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _yearData: 2022
+  _monthData: 12
+  _yearText: {fileID: 1436930531}
+  _monthText: {fileID: 1813112102}
+  _month: {fileID: 1492320959}
 --- !u!1 &498282178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,8 +1332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a420f232288764db738b74a7660229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  year: 2023
-  _month: 2
   _cellCount: 35
   _day: {fileID: 6016997799628845709, guid: 4786b0318adda2541bc6d8b6263c92d9, type: 3}
 --- !u!1 &1498749282

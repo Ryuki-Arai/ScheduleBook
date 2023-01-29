@@ -6,16 +6,18 @@ using UnityEngine.UI;
 
 public class Month : MonoBehaviour
 {
-    [SerializeField] int _year;
-    [SerializeField] int _month;
+    int _year;
+    int _month;
     [SerializeField] int _cellCount;
     [SerializeField] Day _day = default;
     Day[] _days = default;
     int _firstWeek = default;
     DayOfWeek _week = default;
 
-    private void Start()
+    public void InitMonthData(int year,int month)
     {
+        _year = year;
+        _month = month;
         _days = new Day[_cellCount];
         _firstWeek = (int)FindDay(1);
         CreateCalendar();
@@ -27,7 +29,7 @@ public class Month : MonoBehaviour
         return date.DayOfWeek;
     }
 
-    public void CreateCalendar()
+    private void CreateCalendar()
     {
         int day = 1;
         Debug.Log(DateTime.DaysInMonth(_year,_month));
