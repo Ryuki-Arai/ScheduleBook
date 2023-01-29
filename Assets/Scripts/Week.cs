@@ -8,5 +8,5 @@ public enum Week
     Thursday = 4,
     Friday = 5,
     Saturday = 6,
-    holiday = 7,
+    Holiday = 7,
 }
