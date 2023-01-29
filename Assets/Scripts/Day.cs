@@ -21,8 +21,8 @@ public class Day : MonoBehaviour
     }
     [SerializeField] TMP_Text _dayText = default;
     [SerializeField] Image _image = default;
-    [SerializeField] List<string> _events = new List<string>();
-    public List<string> Events => _events;
+    [SerializeField] List<string> _schedules = new List<string>();
+    public List<string> Schedules => _schedules;
     int _date = 0;
     public int Date
     {
@@ -32,6 +32,15 @@ public class Day : MonoBehaviour
             _date = value;
             OnValueChanged();
         }
+    }
+
+    /// <summary>
+    /// スケジュールをデータリストに追加する。
+    /// </summary>
+    /// <param name="contents">スケジュール内容</param>
+    public void AddSchedule(string contents)
+    {
+        _schedules.Add(contents);
     }
 
     /// <summary>

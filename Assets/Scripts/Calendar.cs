@@ -33,7 +33,7 @@ public class Calendar : MonoBehaviour, IPointerClickHandler
             {
                 if (obj.Date == d.Date && d.Week != Week.None)
                 {
-                    _popup.OnApplyTexts(_yearData, _monthData, d.Date, d.Week, d.Events);
+                    _popup.OnApplyTexts(_yearData, _monthData, d.Date, d.Week, d.Schedules);
                 }
             }
         }

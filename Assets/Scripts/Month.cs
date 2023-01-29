@@ -31,10 +31,10 @@ public class Month : MonoBehaviour
     /// </summary>
     /// <param name="d">”CˆÓ‚Ì“ú‚É‚¿</param>
     /// <returns>—j“úî•ñ‚Ì—ñ‹“Œ^</returns>
-    private DayOfWeek FindDay(int d)
+    private Week FindDay(int d)
     {
         var date = new DateTime(_year, _month, d);
-        return date.DayOfWeek;
+        return (Week)date.DayOfWeek;
     }
 
     /// <summary>
