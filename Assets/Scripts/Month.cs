@@ -12,7 +12,7 @@ public class Month : MonoBehaviour
     [SerializeField] Day _day = default;
     Day[] _days = default;
     int _firstWeek = default;
-    DayOfWeek _week = default;
+    Week _week = default;
 
     public void InitMonthData(int year,int month)
     {
@@ -37,7 +37,7 @@ public class Month : MonoBehaviour
         {
             if (i >= _firstWeek && i < DateTime.DaysInMonth(_year, _month) + _firstWeek)
             {
-                _week = FindDay(day);
+                _week = (Week)FindDay(day);
                 var d = Instantiate(_day, transform);
                 d.name = $"Day_{i}";
                 _days[i] = d;
@@ -50,7 +50,7 @@ public class Month : MonoBehaviour
                 var d = Instantiate(_day, transform);
                 d.name = $"Day_{i}";
                 _days[i] = d;
-                _days[i]._Day = 0;
+                _days[i].Week = Week.None;
             }
         }
     }

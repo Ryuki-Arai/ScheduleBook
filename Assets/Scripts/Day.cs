@@ -7,8 +7,8 @@ using TMPro;
 
 public class Day : MonoBehaviour
 {
-    [SerializeField] DayOfWeek _week = default;
-    public DayOfWeek Week 
+    [SerializeField] Week _week = default;
+    public Week Week 
     {
         get => _week;
         set 
@@ -45,13 +45,18 @@ public class Day : MonoBehaviour
     {
         if(_image != null)
         {
-            if (_week == DayOfWeek.Sunday)
+            if (_week == Week.Sunday)
             {
                 _image.color = Color.red;
             }
-            else if (_week == DayOfWeek.Saturday)
+            else if (_week == Week.Saturday)
             {
                 _image.color = Color.blue;
+            }
+            else if(_week == Week.None)
+            {
+                _image.color = Color.gray;
+                _dayText.text = "";
             }
             else
             {
