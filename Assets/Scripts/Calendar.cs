@@ -27,13 +27,14 @@ public class Calendar : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        var obj = eventData.pointerCurrentRaycast.gameObject.GetComponent<Day>()._Day;
-        foreach(var d in _month.Days)
+        if(eventData.pointerCurrentRaycast.gameObject.TryGetComponent(out Day obj))
         {
-            if(obj == d._Day)
+            foreach (var d in _month.Days)
             {
-                Debug.Log($"Find:{_monthData},{d._Day}");
-                _popup.OnApplyTexts(_yearData,_monthData,d._Day,d.Week,d.Events);
+                if (obj._Day == d._Day && d.Week != Week.None)
+                {
+                    _popup.OnApplyTexts(_yearData, _monthData, d._Day, d.Week, d.Events);
+                }
             }
         }
     }
