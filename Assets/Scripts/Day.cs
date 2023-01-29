@@ -1,10 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 using TMPro;
 
+/// <summary>
+/// 日にちを管理するクラス。
+/// 日付・曜日・その日の予定を所持する。
+/// </summary>
 public class Day : MonoBehaviour
 {
     [SerializeField] Week _week = default;
@@ -32,6 +34,9 @@ public class Day : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 日付のテキストを更新する。
+    /// </summary>
     private void OnValueChanged()
     {
         _dayText.text = _day.ToString();
@@ -42,6 +47,9 @@ public class Day : MonoBehaviour
         OnColorChanged();
     }
 
+    /// <summary>
+    /// 曜日によってUIの色を変える。
+    /// </summary>
     private void OnColorChanged()
     {
         if(_image != null)

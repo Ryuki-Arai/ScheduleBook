@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Month : MonoBehaviour
 {
@@ -15,6 +12,11 @@ public class Month : MonoBehaviour
     int _firstWeek = default;
     Week _week = default;
 
+    /// <summary>
+    /// 西暦年月から初日の曜日を算出し、カレンダーのデータを初期化する。
+    /// </summary>
+    /// <param name="year">西暦年号を格納する</param>
+    /// <param name="month">月を格納する</param>
     public void InitMonthData(int year,int month)
     {
         _year = year;
@@ -24,12 +26,20 @@ public class Month : MonoBehaviour
         CreateCalendar();
     }
 
+    /// <summary>
+    /// 任意の日にちが何曜日か求める
+    /// </summary>
+    /// <param name="d">任意の日にち</param>
+    /// <returns>曜日情報の列挙型</returns>
     private DayOfWeek FindDay(int d)
     {
         var date = new DateTime(_year, _month, d);
         return date.DayOfWeek;
     }
 
+    /// <summary>
+    /// 用意されたデータを基にシーン上にカレンダーを作成する。
+    /// </summary>
     private void CreateCalendar()
     {
         int day = 1;
