@@ -11,6 +11,7 @@ public class Month : MonoBehaviour
     [SerializeField] int _cellCount;
     [SerializeField] Day _day = default;
     Day[] _days = default;
+    public Day[] Days => _days;
     int _firstWeek = default;
     Week _week = default;
 
