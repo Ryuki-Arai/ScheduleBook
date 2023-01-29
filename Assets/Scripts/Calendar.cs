@@ -11,7 +11,7 @@ public class Calendar : MonoBehaviour, IPointerClickHandler
     [SerializeField] TMP_Text _yearText;
     [SerializeField] TMP_Text _monthText;
     [SerializeField] Month _month;
-    [SerializeField] GameObject _popup;
+    [SerializeField] Popup _popup;
 
     void Start()
     {
@@ -33,6 +33,7 @@ public class Calendar : MonoBehaviour, IPointerClickHandler
             if(obj == d._Day)
             {
                 Debug.Log($"Find:{_monthData},{d._Day}");
+                _popup.OnApplyTexts(_yearData,_monthData,d._Day,d.Week,d.Events);
             }
         }
     }
