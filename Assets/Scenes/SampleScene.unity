@@ -1016,7 +1016,7 @@ GameObject:
   - component: {fileID: 1436930532}
   - component: {fileID: 1436930531}
   m_Layer: 5
-  m_Name: Year
+  m_Name: YearText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1315,7 +1315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   year: 2023
-  _month: 4
+  _month: 2
   _cellCount: 35
   _day: {fileID: 6016997799628845709, guid: 4786b0318adda2541bc6d8b6263c92d9, type: 3}
 --- !u!1 &1498749282
@@ -2015,7 +2015,7 @@ GameObject:
   - component: {fileID: 1813112103}
   - component: {fileID: 1813112102}
   m_Layer: 5
-  m_Name: Month
+  m_Name: MonthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
