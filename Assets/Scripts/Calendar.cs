@@ -15,10 +15,10 @@ public class Calendar : MonoBehaviour, IPointerClickHandler
 
     void Start()
     {
-        ApplyCalendar();
+        DrawCalendar();
     }
 
-    public void ApplyCalendar()
+    public void DrawCalendar()
     {
         _yearText.text = $"{_yearData}";
         _monthText.text = $"{_monthData}";

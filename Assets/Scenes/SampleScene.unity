@@ -430,8 +430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8361af11a90bf5741ac58769b8c855a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _yearData: 2023
-  _monthData: 1
+  _yearData: 2002
+  _monthData: 10
   _yearText: {fileID: 1436930531}
   _monthText: {fileID: 1813112102}
   _month: {fileID: 1492320959}
@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: 985599587}
   - component: {fileID: 985599586}
   m_Layer: 5
-  m_Name: EventList
+  m_Name: ScheduleList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1428,7 +1428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: yyyy
+  m_text: 2002
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2654,7 +2654,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MM
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

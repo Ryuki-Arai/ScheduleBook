@@ -23,7 +23,7 @@ public class Month : MonoBehaviour
         _month = month;
         _days = new Day[_cellCount];
         _firstWeek = (int)FindDay(1);
-        CreateCalendar();
+        ApplyCalendar();
     }
 
     /// <summary>
@@ -38,28 +38,24 @@ public class Month : MonoBehaviour
     }
 
     /// <summary>
-    /// 用意されたデータを基にシーン上にカレンダーを作成する。
+    /// 用意されたデータを基にシーン上にゲームオブジェクトの配列を作成する。
     /// </summary>
-    private void CreateCalendar()
+    private void ApplyCalendar()
     {
         int day = 1;
         for (int i = 0; i < _cellCount; i++)
         {
+            _days[i] = Instantiate(_day, transform);
+            _days[i].name = $"Day_{i}";
             if (i >= _firstWeek && i < DateTime.DaysInMonth(_year, _month) + _firstWeek)
             {
                 _week = FindDay(day);
-                var d = Instantiate(_day, transform);
-                d.name = $"Day_{i}";
-                _days[i] = d;
                 _days[i].Date = day;
                 _days[i].Week = _week;
                 day++;
             }
             else
             {
-                var d = Instantiate(_day, transform);
-                d.name = $"Day_{i}";
-                _days[i] = d;
                 _days[i].Week = Week.None;
             }
         }
