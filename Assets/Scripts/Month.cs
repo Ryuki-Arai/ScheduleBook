@@ -47,7 +47,7 @@ public class Month : MonoBehaviour
         {
             if (i >= _firstWeek && i < DateTime.DaysInMonth(_year, _month) + _firstWeek)
             {
-                _week = (Week)FindDay(day);
+                _week = FindDay(day);
                 var d = Instantiate(_day, transform);
                 d.name = $"Day_{i}";
                 _days[i] = d;
