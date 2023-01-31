@@ -13,17 +13,16 @@ public class Month : MonoBehaviour
     Week _week = default;
 
     /// <summary>
-    /// 西暦年月から初日の曜日を算出し、カレンダーのデータを初期化する。
+    /// カレンダーのデータを初期化する。
     /// </summary>
-    /// <param name="year">西暦年号を格納する</param>
-    /// <param name="month">月を格納する</param>
-    public void InitMonthData(int year,int month)
+    public void InitMonthData()
     {
-        _year = year;
-        _month = month;
         _days = new Day[_cellCount];
-        _firstWeek = (int)FindDay(1);
-        ApplyCalendar();
+        for (int i = 0; i < _cellCount; i++)
+        {
+            _days[i] = Instantiate(_day, transform);
+            _days[i].name = $"Day_{i}";
+        }
     }
 
     /// <summary>
@@ -40,13 +39,14 @@ public class Month : MonoBehaviour
     /// <summary>
     /// 用意されたデータを基にシーン上にゲームオブジェクトの配列を作成する。
     /// </summary>
-    private void ApplyCalendar()
+    public void ApplyCalendar(int year, int month)
     {
+        _year = year;
+        _month = month;
+        _firstWeek = (int)FindDay(1);
         int day = 1;
         for (int i = 0; i < _cellCount; i++)
         {
-            _days[i] = Instantiate(_day, transform);
-            _days[i].name = $"Day_{i}";
             if (i >= _firstWeek && i < DateTime.DaysInMonth(_year, _month) + _firstWeek)
             {
                 _week = FindDay(day);
