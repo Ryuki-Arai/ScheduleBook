@@ -6,14 +6,23 @@ using UnityEngine;
 public class Popup : MonoBehaviour
 {
     [SerializeField] TMP_Text _dateText;
+    [SerializeField] TMP_Text _scheduleText;
+    [SerializeField] TMP_InputField _scheduleInputField;
 
-    public void OnApplyTexts(int yyyy,int MM, int dd, Week day, List<string> schedules)
+    public void ApplyTexts(Date date)
     {
-        _dateText.text = $"{yyyy}/{MM}/{dd} ({day})";
+        _dateText.text = $"{date.year}/{date.month}/{date.day} ({date.week})";
         gameObject.SetActive(true);
-        foreach(var schedule in schedules)
+        _scheduleText.text = "";
+        if(date.schedule.Count == 0) return;
+        foreach(var schedule in date.schedule)
         {
-
+            _scheduleText.text += $"{schedule}\n";
         }
+    }
+
+    public void ApplySchedule()
+    {
+        _scheduleText.text += $"{_scheduleInputField.text}\n";
     }
 }
