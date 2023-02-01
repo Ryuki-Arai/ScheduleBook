@@ -56,6 +56,7 @@ public class Month : MonoBehaviour
             }
             else
             {
+                _days[i].Date = 0;
                 _days[i].Week = Week.None;
             }
         }
