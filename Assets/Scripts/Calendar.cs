@@ -42,11 +42,11 @@ public class Calendar : MonoBehaviour, IPointerClickHandler
     {
         if(eventData.pointerCurrentRaycast.gameObject.TryGetComponent(out Day obj))
         {
-            foreach (var d in _month.Days)
+            foreach (var day in _month.Days)
             {
-                if (obj.Date == d.Date && d.Date.week != Week.None)
+                if (obj.Date == day.Date && day.Date.week != Week.None)
                 {
-                    _popup.ApplyTexts(d.Date);
+                    _popup.ApplyTexts(day);
                 }
             }
         }

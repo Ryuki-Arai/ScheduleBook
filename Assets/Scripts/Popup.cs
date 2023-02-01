@@ -8,9 +8,12 @@ public class Popup : MonoBehaviour
     [SerializeField] TMP_Text _dateText;
     [SerializeField] TMP_Text _scheduleText;
     [SerializeField] TMP_InputField _scheduleInputField;
+    Day day;
 
-    public void ApplyTexts(Date date)
+    public void ApplyTexts(Day day)
     {
+        this.day = day;
+        var date = day.Date;
         _dateText.text = $"{date.year}/{date.month}/{date.day} ({date.week})";
         gameObject.SetActive(true);
         _scheduleText.text = "";
@@ -23,6 +26,8 @@ public class Popup : MonoBehaviour
 
     public void ApplySchedule()
     {
+        day.AddSchedule(_scheduleInputField.text);
         _scheduleText.text += $"{_scheduleInputField.text}\n";
+        _scheduleInputField.text = "";
     }
 }
