@@ -49,15 +49,12 @@ public class Month : MonoBehaviour
         {
             if (i >= _firstWeek && i < DateTime.DaysInMonth(_year, _month) + _firstWeek)
             {
-                _week = FindDay(day);
-                _days[i].Date = day;
-                _days[i].Week = _week;
+                _days[i].Date = new Date(_year, _month, day,FindDay(day));
                 day++;
             }
             else
             {
-                _days[i].Date = 0;
-                _days[i].Week = Week.None;
+                _days[i].Date = new Date(_year, _month, 0, Week.None);
             }
         }
     }

@@ -44,9 +44,9 @@ public class Calendar : MonoBehaviour, IPointerClickHandler
         {
             foreach (var d in _month.Days)
             {
-                if (obj.Date == d.Date && d.Week != Week.None)
+                if (obj.Date == d.Date && d.Date.week != Week.None)
                 {
-                    _popup.OnApplyTexts(_yearData, _monthData, d.Date, d.Week, d.Schedules);
+                    _popup.ApplyTexts(d.Date);
                 }
             }
         }
