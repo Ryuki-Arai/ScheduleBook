@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// 年月日と曜日、記録を保管するクラス
+/// </summary>
 [Serializable]
 public class Date
 {
@@ -26,6 +29,7 @@ public class Date
         this.month = month;
         this.day = day;
         this.week = week;
+        this.schedule = new List<string>();
     }
     
     public Date(int year,int month, int day, Week week, List<string> schedule)
