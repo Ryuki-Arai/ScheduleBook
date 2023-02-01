@@ -10,7 +10,6 @@ public class Month : MonoBehaviour
     Day[] _days = default;
     public Day[] Days => _days;
     int _firstWeek = default;
-    Week _week = default;
 
     /// <summary>
     /// カレンダーのデータを初期化する。
