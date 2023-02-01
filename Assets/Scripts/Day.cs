@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -9,27 +8,16 @@ using TMPro;
 /// </summary>
 public class Day : MonoBehaviour
 {
-    [SerializeField] Week _week = default;
-    public Week Week 
-    {
-        get => _week;
-        set 
-        { 
-            _week = value;
-            OnColorChanged();
-        }
-    }
-    [SerializeField] TMP_Text _dayText = default;
+    [SerializeField] Date _date;
+    [SerializeField] TMP_Text _dateText = default;
     [SerializeField] Image _image = default;
-    [SerializeField] List<string> _schedules = new List<string>();
-    public List<string> Schedules => _schedules;
-    int _date = 0;
-    public int Date
+    public Date Date
     {
         get => _date;
         set
         {
             _date = value;
+            OnColorChanged();
             OnValueChanged();
         }
     }
@@ -40,7 +28,7 @@ public class Day : MonoBehaviour
     /// <param name="contents">スケジュール内容</param>
     public void AddSchedule(string contents)
     {
-        _schedules.Add(contents);
+        _date.schedule.Add(contents);
     }
 
     /// <summary>
@@ -48,7 +36,7 @@ public class Day : MonoBehaviour
     /// </summary>
     private void OnValueChanged()
     {
-        _dayText.text = _date.ToString();
+        _dateText.text = _date.day != 0 ? _date.day.ToString(): "";
     }
 
     private void OnValidate()
@@ -63,18 +51,18 @@ public class Day : MonoBehaviour
     {
         if(_image != null)
         {
-            if (_week == Week.Sunday)
+            if (_date.week == Week.Sunday)
             {
                 _image.color = Color.red;
             }
-            else if (_week == Week.Saturday)
+            else if (_date.week == Week.Saturday)
             {
                 _image.color = Color.blue;
             }
-            else if(_week == Week.None)
+            else if(_date.week == Week.None)
             {
                 _image.color = Color.gray;
-                _dayText.text = "";
+                _dateText.text = "";
             }
             else
             {

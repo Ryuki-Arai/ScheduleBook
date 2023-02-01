@@ -60,10 +60,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d78a51148dcbf4ebee20cfe6021bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _week: 0
-  _dayText: {fileID: 6016997800473907667}
+  _date:
+    year: 2023
+    month: 2
+    day: 2
+    week: 4
+    schedule: []
+  _dateText: {fileID: 6016997800473907667}
   _image: {fileID: 6016997799628845699}
-  _event: []
 --- !u!114 &6016997799628845699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
