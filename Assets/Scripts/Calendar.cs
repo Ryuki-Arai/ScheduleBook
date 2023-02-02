@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,8 +7,8 @@ using UnityEngine.EventSystems;
 
 public class Calendar : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] int _yearData;
-    [SerializeField] int _monthData;
+    [SerializeField,Range(1,9999)] int _yearData = DateTime.Today.Year;
+    [SerializeField,Range(1,12)] int _monthData = DateTime.Today.Month;
     [SerializeField] TMP_Text _yearText;
     [SerializeField] TMP_Text _monthText;
     [SerializeField] TMP_InputField _yearInputField;
@@ -33,8 +34,8 @@ public class Calendar : MonoBehaviour, IPointerClickHandler
             _monthData = int.Parse(_monthInputField.text);
             _monthInputField.text = "";
         } 
-        _yearText.text = $"{_yearData}";
-        _monthText.text = $"{_monthData}";
+        _yearText.text = $"{_yearData}”N";
+        _monthText.text = $"{_monthData}ŒŽ";
         _month.ApplyCalendar(_yearData,_monthData);
     }
 

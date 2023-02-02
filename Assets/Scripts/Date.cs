@@ -15,7 +15,7 @@ public class Date
 
     public Date()
     {
-        var nowDate = DateTime.Now;
+        var nowDate = DateTime.Today;
         year = nowDate.Year;
         month = nowDate.Month;
         day = nowDate.Day;
